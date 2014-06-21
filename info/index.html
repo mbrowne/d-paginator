@@ -1,0 +1,21 @@
+<!-- paginator info and options -->
+<info:>
+	<div class="paginator-options">
+	{#with @paginator as :paginator}
+		<div class="row">
+			<div class="col width-1of2">Listing results {.startNum} to {.endNum} of {.totalRecordCount}</div>
+			<div class="col text-right">
+				# Results per page:&nbsp;
+				{{.showAllRecordsOption}}
+				<select class="select-records-per-page" x-bind="change:changeRecordsPerPage">
+				{{#each .recordsPerPageOptions as :num}}
+					<option selected="{equal(:paginator.recordsPerPage, :num)}">{{:num}}</option>
+				{{/each}}
+				{{#if .allowShowAllRecords}}
+					<option selected="{equal(:paginator.recordsPerPage, -1)}" value="-1">All</option>
+				{{/if}}
+				</select>
+			</div>
+		</div>
+	{/with}
+	</div>

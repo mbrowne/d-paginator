@@ -1,0 +1,16 @@
+<links:>
+  <div class="paginator-links">
+  {#with @paginator}
+	Page
+	{#if prevPage}<span class="prev-link"><a href="{currentBaseUrl}page={prevPage}&recordsPerPage={recordsPerPage}">Previous</a> </span>{/if}
+	{#each pages as :page}
+		{#if .isCurrent}
+			<span class="current-page"> {:page.num} </span>
+		{else}
+			<span> <a href="{currentBaseUrl}page={:page.num}&recordsPerPage={recordsPerPage}">{:page.num}</a> </span>
+		{/if}
+	{/each}
+	{#if nextPage}<span class="next-link"><a href="{currentBaseUrl}page={nextPage}&recordsPerPage={recordsPerPage}">Next</a> </span>{/if}
+	{#if nextPage}<span class="last-link"><a href="{currentBaseUrl}page={totalPages}&recordsPerPage={recordsPerPage}">Last</a></span>{/if}
+  {/with}
+  </div>
