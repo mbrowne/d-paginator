@@ -43,6 +43,4 @@ In your view:
 
 ## License
 
-MIT Licensed
-
-Author: Matt Browne
+MIT License
