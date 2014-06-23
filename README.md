@@ -1,5 +1,5 @@
 # derby-ui-paginator
-Pagination Component for Derby
+Pagination Component for [Derby](http://derbyjs.com)
 
 ## Example Usage
 
